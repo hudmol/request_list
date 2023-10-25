@@ -27,7 +27,7 @@
 
 </script>
 
-<% if defined?(@result) && @result.respond_to?(:resolved_repository) && RequestList.handler_config_for(@result) %>
+<% if RequestList.handler_config_for(@result) %>
   <meta name="rl-handler-defined" content="true"/>
 <% end %>
 

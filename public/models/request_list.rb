@@ -63,6 +63,10 @@ class RequestList
 
 
   def self.handler_config_for(record)
+    return false unless defined?(record)
+    return false unless record.respond_to?(:resolved_repository)
+    return false unless record.resolved_repository
+
     cfg = repo_config_for(record)
     return false unless cfg[:handler]
     return false unless @@request_handlers[cfg[:handler]]
